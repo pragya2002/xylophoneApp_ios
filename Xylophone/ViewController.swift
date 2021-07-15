@@ -18,6 +18,12 @@ class ViewController: UIViewController {
 
     @IBAction func keypressed(_ sender: UIButton) {
         Piano(a: sender.currentTitle!)
+        sender.alpha = 0.5
+
+  //Code should execute after 0.2 second delay.
+  DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+      //Bring's sender's opacity back up to fully opaque.
+      sender.alpha = 1.0}
     }
 
     func Piano(a:String)
